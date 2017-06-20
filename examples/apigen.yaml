@@ -1,0 +1,60 @@
+---
+# 参数说明：可以单独定义，也可以定义在单独文件里
+definations:
+  # 参数名称: 参数说明(缺省值:类型)
+  # 格式中 * 表示必选
+  "*id": "对象标识(123)"
+  "*year": "年(2017:integer)"
+  "month": "月"
+  "age": "年龄"
+---
+request:
+  summary: "修改用户信息"
+  description: |
+    # 修改用户信息
+  method: POST
+  url: /users/{id}?year=2016&month=12
+  tags:
+    - 用户管理
+    - 后台
+  form:
+    username=tom&password=123456
+responses:
+  "200":
+    description: 描述
+    body: |
+      {
+        "code": 200,
+        "msg": "OK"
+      }
+  "404":
+    description: Not Found
+  default:
+    description: 错误
+---
+request:
+  summary: "修改用户信息"
+  description: |
+    # 修改用户信息
+  method: PUT
+  url: /users/{id}?year=2016&month=12
+  tags:
+    - 用户管理
+    - 后台
+  body: |
+    {
+      "name": "tom",
+      "age": 3
+    }
+responses:
+  "200":
+    description: 描述
+    body: |
+      {
+        "code": 200,
+        "msg": "OK"
+      }
+  "404":
+    description: Not Found
+  default:
+    description: 错误

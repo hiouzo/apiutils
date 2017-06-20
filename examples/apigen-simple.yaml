@@ -1,0 +1,17 @@
+request:
+  summary: 修改用户信息
+  method: POST
+  url: /users/{id}?year=2016&month=12
+  tags: [用户管理, 后台]
+  form:
+    username=tom&password=123456
+responses:
+  "200":
+    description: 描述
+    body: |
+      {
+        "code": 200,
+        "msg": "OK"
+      }
+  default:
+    description: 错误
